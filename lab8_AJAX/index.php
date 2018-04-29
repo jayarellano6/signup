@@ -33,12 +33,6 @@
             var passwordsMatch = false;
         
         
-            // function insertUserIntoDb(firstName, lastName, email, user, password){
-            //     if(userAvailable && passwordsMatch){
-                     
-            //     }
-            // }
-        
             $(document).ready(function(){
 
                 $(".button1").on("click",function(){
@@ -62,12 +56,12 @@
                             // alert(data.password);
                             if (!data) {  //data == false
                                 $("#added").show();
-                        
+                            }
                         },
                         complete: function(data,status) { //optional, used for debugging purposes
                         //alert(status);
+                            
                         }
-                        
                         });//ajax
                     }
                     
@@ -134,9 +128,9 @@
                         data: { "zip": $("#zipcode").val()},
                         success: function(data,status) {
                         // alert(data);
-                        $("#city").html(data.city);
-                        $("#lat").html(data.latitude);
-                        $("#long").html(data.longitude);
+                            $("#city").html(data.city);
+                            $("#lat").html(data.latitude);
+                            $("#long").html(data.longitude);
                         },
                         complete: function(data,status) { //optional, used for debugging purposes
                         //alert(status);
