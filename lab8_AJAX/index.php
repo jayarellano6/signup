@@ -78,6 +78,8 @@
                         
                             // alert(data.password);
                             if (!data) {  //data == false
+                                $("#added").hide();
+                            }else{
                                 $("#added").show();
                             }
                         },
