@@ -29,6 +29,16 @@
                 color: red;
                 display: none;
             }
+            .button1{
+                padding-top:5px;
+                padding-bottom:5px;
+                color:white;
+                border-style:solid;
+                border-width: 2px;
+                border-radius: 2px;
+                border-color:white;
+                background-color: #ff9838;
+            }
         </style>
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script>
@@ -230,7 +240,7 @@
                 
                 Type Password Again: <input id="re-password" type="password"><br>
                 <p id="notMatchMessage">!passwords do not match!</p>
-                
+                <br>
                 <button class="button1">Sign Up!</button>
                 <h3 id="added">Added account to database</h3>
             </fieldset>
