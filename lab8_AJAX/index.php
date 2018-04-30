@@ -3,7 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>AJAX: Sign Up Page</title>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <style type="text/css">
+            body{
+                font-family: 'Ubuntu', sans-serif;
+                background-color: #80bece;
+            }
+            fieldset{
+                border-color: white;
+                border-style: solid;
+            }
             #notMatchMessage{
                 color: red;
                 display: none;
@@ -134,8 +143,15 @@
                         // alert(data);
                         if(!data){
                             $("#zipnotfound").show();
+                            $("#zipcode").css("background-color", "red");
+                            $("#zipcode").css("color", "white");
+                            $("#city").html("");
+                            $("#lat").html("");
+                            $("#long").html("");
                         }else{
                             $("#zipnotfound").hide();
+                            $("#zipcode").css("background-color", "white");
+                            $("#zipcode").css("color", "black");
                             $("#city").html(data.city);
                             $("#lat").html(data.latitude);
                             $("#long").html(data.longitude);
@@ -190,7 +206,7 @@
                 Last Name:   <input type="text" id = "lastName" ><br> 
                 Email:       <input type="text" id = "email"><br> 
                 Phone Number:<input type="text" id = "phoneNumber" ><br><br>
-                Zip Code:    <input type="text" id="zipcode"> <span id="zipnotfound">zipcode not found</span><br>
+                Zip Code:    <input type="text" id="zipcode"> <span id="zipnotfound">!zipcode not found!</span><br>
                 City:        <span id="city"></span>
                 <br>
                 Latitude:    <span id="lat"></span>
@@ -208,12 +224,12 @@
                 
                 Select a County: <select id="county"></select><br>
                 
-                Desired Username: <input id="userName" type="text"> <span id="userTaken">username is taken</span><br>
+                Desired Username: <input id="userName" type="text"> <span id="userTaken">!username is taken!</span><br>
                 
                 Password: <input id="password" type="password"><br>
                 
                 Type Password Again: <input id="re-password" type="password"><br>
-                <p id="notMatchMessage">passwords do not match</p>
+                <p id="notMatchMessage">!passwords do not match!</p>
                 
                 <button class="button1">Sign Up!</button>
                 <h3 id="added">Added account to database</h3>
