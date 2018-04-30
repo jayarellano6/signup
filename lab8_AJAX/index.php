@@ -76,12 +76,8 @@
                         },
                         success: function(data,status) {
                         
-                            // alert(data.password);
-                            if (!data) {  //data == false
-                                $("#added").hide();
-                            }else{
-                                $("#added").show();
-                            }
+                            // alert(data.password
+                            $("#added").show();
                         },
                         complete: function(data,status) { //optional, used for debugging purposes
                         //alert(status);
