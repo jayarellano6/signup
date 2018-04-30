@@ -76,12 +76,12 @@
                         },
                         success: function(data,status) {
                         
-                            // alert(data.password
-                            $("#added").show();
+                            // alert(data.password);
+                            // $("#added").show();
                         },
                         complete: function(data,status) { //optional, used for debugging purposes
                         //alert(status);
-                            
+                            $("#added").show();
                         }
                         });//ajax
                     }
