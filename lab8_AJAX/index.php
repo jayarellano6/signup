@@ -108,11 +108,15 @@
                             if (!data) {  //data == false
                                 //  alert("Username is AVAILABLE!");
                                  $("#userTaken").hide();
+                                 $("#userName").css("background-color", "white");
+                                 $("#userName").css("color", "black");
                                  userAvailable = true;
                                 
                                 
                             } else {
                                 $("#userTaken").show();
+                                $("#userName").css("background-color", "red");
+                                $("#userName").css("color", "white");
                                 // alert("Username ALREADY TAKEN!");
                                 userAvailable = false;
                                 
