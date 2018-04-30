@@ -16,6 +16,10 @@
                 color: green;
                 display: none;
             }
+            #zipnotfound{
+                color: red;
+                display: none;
+            }
         </style>
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script>
@@ -128,9 +132,14 @@
                         data: { "zip": $("#zipcode").val()},
                         success: function(data,status) {
                         // alert(data);
+                        if(!data){
+                            $("#zipnotfound").show();
+                        }else{
+                            $("#zipnotfound").hide();
                             $("#city").html(data.city);
                             $("#lat").html(data.latitude);
                             $("#long").html(data.longitude);
+                        }
                         },
                         complete: function(data,status) { //optional, used for debugging purposes
                         //alert(status);
@@ -181,7 +190,7 @@
                 Last Name:   <input type="text" id = "lastName" ><br> 
                 Email:       <input type="text" id = "email"><br> 
                 Phone Number:<input type="text" id = "phoneNumber" ><br><br>
-                Zip Code:    <input type="text" id="zipcode"><br>
+                Zip Code:    <input type="text" id="zipcode"> <span id="zipnotfound">zipcode not found</span><br>
                 City:        <span id="city"></span>
                 <br>
                 Latitude:    <span id="lat"></span>
